@@ -34,6 +34,11 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent);
         }
 
-
+        val buttonNetworkInfo = findViewById<Button>(R.id.buttonNetworkInfo)
+        buttonNetworkInfo.setOnClickListener {
+            val intent = Intent(this, NetworkInfoActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_MULTIPLE_TASK)
+            startActivity(intent);
+        }
     }
 }

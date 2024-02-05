@@ -89,7 +89,7 @@ private fun initializeWebView() {
         }
     }
 
-    webview.loadUrl("https://192.168.1.7:3000")
+    webview.loadUrl("https://192.168.1.7:3002")
 }
 
 override fun onRequestPermissionsResult(
