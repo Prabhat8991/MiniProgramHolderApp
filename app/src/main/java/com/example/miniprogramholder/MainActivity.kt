@@ -15,5 +15,25 @@ class MainActivity : AppCompatActivity() {
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_MULTIPLE_TASK)
             startActivity(intent);
         }
+        val buttonBt = findViewById<Button>(R.id.buttonBluetoothMiniProgram)
+        buttonBt.setOnClickListener {
+            val intent = Intent(this, BluetoothActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_MULTIPLE_TASK)
+            startActivity(intent);
+        }
+        val buttonGeolocation = findViewById<Button>(R.id.buttonGeolocation)
+        buttonGeolocation.setOnClickListener {
+            val intent = Intent(this, GeolocationActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_MULTIPLE_TASK)
+            startActivity(intent);
+        }
+        val buttonDeviceMotion = findViewById<Button>(R.id.buttonDeviceMotion)
+        buttonDeviceMotion.setOnClickListener {
+            val intent = Intent(this, DeviceMotionActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_MULTIPLE_TASK)
+            startActivity(intent);
+        }
+
+
     }
 }
