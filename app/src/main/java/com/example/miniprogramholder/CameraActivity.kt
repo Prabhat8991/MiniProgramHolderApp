@@ -57,7 +57,7 @@ class CameraActivity : AppCompatActivity() {
             }
         }
 
-        webview.loadUrl("https://192.168.1.7:3000")
+        webview.loadUrl("https://192.168.1.7:3001")
     }
 
     @RequiresApi(Build.VERSION_CODES.M)
