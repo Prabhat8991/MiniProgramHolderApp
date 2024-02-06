@@ -38,4 +38,16 @@
         android:layout_height="wrap_content"
         android:text="Network Info mini program"
         />
+    <Button
+        android:id="@+id/buttonGeolocationWithCapacitor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Geolocation mini Capacitor"
+        />
+    <Button
+        android:id="@+id/buttonCameraWithCapacitor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Camera with Capacitor"
+        />
 </LinearLayout>

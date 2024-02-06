@@ -17,7 +17,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.content.PermissionChecker
 
 
-class CameraActivity : AppCompatActivity() {
+class CameraActivityWithCapacitor : AppCompatActivity() {
 
     private val CAMERA_PERMISSION_REQUEST_CODE = 100
     private lateinit var webview: WebView
@@ -57,7 +57,7 @@ class CameraActivity : AppCompatActivity() {
             }
         }
 
-        webview.loadUrl("https://192.168.1.7:3000")
+        webview.loadUrl("https://192.168.1.7:3007")
     }
 
     @RequiresApi(Build.VERSION_CODES.M)

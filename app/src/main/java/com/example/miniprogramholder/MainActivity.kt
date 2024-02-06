@@ -40,5 +40,17 @@ class MainActivity : AppCompatActivity() {
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_MULTIPLE_TASK)
             startActivity(intent);
         }
+        val buttonGeolocationWithCapacitor = findViewById<Button>(R.id.buttonGeolocationWithCapacitor)
+        buttonGeolocationWithCapacitor.setOnClickListener {
+            val intent = Intent(this, GeolocationActivityWithCapacitor::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_MULTIPLE_TASK)
+            startActivity(intent);
+        }
+        val buttonCameraWithCapacitor = findViewById<Button>(R.id.buttonCameraWithCapacitor)
+        buttonCameraWithCapacitor.setOnClickListener {
+            val intent = Intent(this, CameraActivityWithCapacitor::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_MULTIPLE_TASK)
+            startActivity(intent);
+        }
     }
 }
