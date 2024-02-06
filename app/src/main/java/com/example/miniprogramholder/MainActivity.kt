@@ -52,5 +52,11 @@ class MainActivity : AppCompatActivity() {
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_MULTIPLE_TASK)
             startActivity(intent);
         }
+        val buttonDeviceMotionWithCapacitor = findViewById<Button>(R.id.buttonDeviceMotionWithCapacitor)
+        buttonDeviceMotionWithCapacitor.setOnClickListener {
+            val intent = Intent(this, DeviceMotionActivityWithCapacitor::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_MULTIPLE_TASK)
+            startActivity(intent);
+        }
     }
 }

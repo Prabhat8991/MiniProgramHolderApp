@@ -62,6 +62,18 @@
         <activity
             android:name=".NetworkInfoActivity"
             android:exported="true" />
+
+        <activity
+            android:name=".CameraActivityWithCapacitor"
+            android:exported="true" />
+
+        <activity
+            android:name=".GeolocationActivityWithCapacitor"
+            android:exported="true" />
+
+        <activity
+            android:name=".DeviceMotionActivityWithCapacitor"
+            android:exported="true" />
     </application>
 
 </manifest>
