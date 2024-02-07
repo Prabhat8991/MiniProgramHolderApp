@@ -51,7 +51,8 @@ class NetworkInfoActivity : AppCompatActivity() {
             }
         }
 
-        webview.loadUrl("https://192.168.1.7:3005")
+        webview.loadUrl(BuildConfig.DEVICE_IP_ADDRESS+ "3005")
+
     }
 
 }

@@ -89,7 +89,8 @@ private fun initializeWebView() {
         }
     }
 
-    webview.loadUrl("https://192.168.1.7:3003")
+    webview.loadUrl(BuildConfig.DEVICE_IP_ADDRESS+ "3003")
+
 }
 
 override fun onRequestPermissionsResult(

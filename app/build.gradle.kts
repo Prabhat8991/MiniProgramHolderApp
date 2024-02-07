@@ -7,6 +7,10 @@ android {
     namespace = "com.example.miniprogramholder"
     compileSdk = 34
 
+    buildFeatures {
+        buildConfig = true
+    }
+
     defaultConfig {
         applicationId = "com.example.miniprogramholder"
         minSdk = 24
@@ -17,7 +21,12 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
+
+
     buildTypes {
+        debug {
+            buildConfigField("String", "DEVICE_IP_ADDRESS", "\"https://192.168.1.22:\"")
+        }
         release {
             isMinifyEnabled = false
             proguardFiles(
@@ -33,6 +42,7 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
 }
 
 dependencies {
