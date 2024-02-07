@@ -62,4 +62,10 @@
         android:layout_height="wrap_content"
         android:text="Bluetooth with Capacitor"
         />
+    <Button
+        android:id="@+id/buttonNetworkWithCapacitor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Network with Capacitor"
+        />
 </LinearLayout>

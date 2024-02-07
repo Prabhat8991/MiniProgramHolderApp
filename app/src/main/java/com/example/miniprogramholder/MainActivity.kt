@@ -58,9 +58,15 @@ class MainActivity : AppCompatActivity() {
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_MULTIPLE_TASK)
             startActivity(intent);
         }
-        val buttonBluetoothMotionWithCapacitor = findViewById<Button>(R.id.buttonBluetoothWithCapacitor)
-        buttonBluetoothMotionWithCapacitor.setOnClickListener {
+        val buttonBluetoothWithCapacitor = findViewById<Button>(R.id.buttonBluetoothWithCapacitor)
+        buttonBluetoothWithCapacitor.setOnClickListener {
             val intent = Intent(this, BluetoothActivityWithCapacitor::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_MULTIPLE_TASK)
+            startActivity(intent);
+        }
+        val buttonNetworkWithCapacitor = findViewById<Button>(R.id.buttonNetworkWithCapacitor)
+        buttonNetworkWithCapacitor.setOnClickListener {
+            val intent = Intent(this, NetworkInfoActivityWithCapacitor::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_MULTIPLE_TASK)
             startActivity(intent);
         }

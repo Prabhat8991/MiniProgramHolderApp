@@ -74,6 +74,9 @@
         <activity
             android:name=".DeviceMotionActivityWithCapacitor"
             android:exported="true" />
+        <activity
+            android:name=".NetworkInfoActivityWithCapacitor"
+            android:exported="true" />
     </application>
 
 </manifest>
