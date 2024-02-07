@@ -2,12 +2,14 @@ package com.example.miniprogramholder
 
 import android.Manifest
 import android.content.pm.PackageManager
+import android.net.Uri
 import android.net.http.SslError
 import android.os.Bundle
 import android.view.View
 import android.webkit.GeolocationPermissions
 import android.webkit.PermissionRequest
 import android.webkit.SslErrorHandler
+import android.webkit.ValueCallback
 import android.webkit.WebChromeClient
 import android.webkit.WebSettings
 import android.webkit.WebView
@@ -31,6 +33,9 @@ class BluetoothActivityWithCapacitor : AppCompatActivity() {
         if (ActivityCompat.checkSelfPermission(
                 this,
                 Manifest.permission.BLUETOOTH_CONNECT
+            ) != PackageManager.PERMISSION_GRANTED || ActivityCompat.checkSelfPermission(
+                this,
+                Manifest.permission.BLUETOOTH_SCAN
             ) != PackageManager.PERMISSION_GRANTED
         ) {
             // TODO: Consider calling
@@ -43,6 +48,7 @@ class BluetoothActivityWithCapacitor : AppCompatActivity() {
             requestPermissions(
                 arrayOf(
                     android.Manifest.permission.BLUETOOTH_CONNECT,
+                    android.Manifest.permission.BLUETOOTH_SCAN,
                     android.Manifest.permission.BLUETOOTH,
                     android.Manifest.permission.BLUETOOTH_ADMIN,
                     android.Manifest.permission.ACCESS_FINE_LOCATION,
@@ -62,6 +68,11 @@ private fun initializeWebView() {
     webSettings.setGeolocationEnabled(true)
     webSettings.setDomStorageEnabled(true);
 
+    webSettings.setMediaPlaybackRequiresUserGesture(false) // Optional
+
+    webSettings.setAllowUniversalAccessFromFileURLs(true) // Optional
+
+
 
     webview.webViewClient = object : WebViewClient() {
         override fun onReceivedSslError(
@@ -70,6 +81,11 @@ private fun initializeWebView() {
             error: SslError?
         ) {
             handler?.proceed();
+        }
+
+        override fun shouldOverrideUrlLoading(view: WebView, url: String): Boolean {
+            // Handle URL loading (if needed)
+            return false
         }
     }
 
@@ -86,6 +102,15 @@ private fun initializeWebView() {
             callback: GeolocationPermissions.Callback?
         ) {
             callback?.invoke(origin, true, false);
+        }
+
+        override fun onShowFileChooser(
+            webView: WebView,
+            filePathCallback: ValueCallback<Array<Uri>>,
+            fileChooserParams: FileChooserParams
+        ): Boolean {
+            // Handle file chooser dialog for file input (if needed)
+            return true
         }
     }
 

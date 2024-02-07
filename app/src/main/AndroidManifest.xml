@@ -16,7 +16,11 @@
 
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" /> <!-- Optional, depending on your use case -->
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN"
+         />
+    <!-- Optional, depending on your use case -->
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -76,6 +80,9 @@
             android:exported="true" />
         <activity
             android:name=".NetworkInfoActivityWithCapacitor"
+            android:exported="true" />
+        <activity
+            android:name=".BluetoothActivityWithCapacitor"
             android:exported="true" />
     </application>
 
