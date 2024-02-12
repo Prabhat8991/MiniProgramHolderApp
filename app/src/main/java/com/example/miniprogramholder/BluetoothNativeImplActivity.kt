@@ -89,7 +89,6 @@ class BluetoothNativeImplActivity : AppCompatActivity() {
         binding = ActivityBluetoothBinding.inflate(layoutInflater)
         setContentView(binding.root)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.title = "Bluetooth - Native Impl"
 
         setWebView()
         val filter = IntentFilter(BluetoothDevice.ACTION_FOUND)
