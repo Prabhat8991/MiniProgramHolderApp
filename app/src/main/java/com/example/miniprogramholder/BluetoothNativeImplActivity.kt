@@ -23,7 +23,7 @@ import com.example.miniprogramholder.databinding.ActivityBluetoothBinding
 
 class BluetoothNativeImplActivity : AppCompatActivity() {
 
-    private val webUrl = BuildConfig.DEVICE_IP_ADDRESS+"3000/"
+    private val webUrl = BuildConfig.DEVICE_IP_ADDRESS+"3011/"
 
     private lateinit var binding: ActivityBluetoothBinding
 
