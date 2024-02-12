@@ -70,5 +70,13 @@ class MainActivity : AppCompatActivity() {
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_MULTIPLE_TASK)
             startActivity(intent);
         }
+
+        val buttonBluetoothNativeImpl = findViewById<Button>(R.id.buttonBluetoothNativeImpl)
+        buttonBluetoothNativeImpl.setOnClickListener {
+            val intent = Intent(this, BluetoothNativeImplActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_MULTIPLE_TASK)
+            startActivity(intent)
+        }
+
     }
 }

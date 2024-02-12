@@ -84,6 +84,9 @@
         <activity
             android:name=".BluetoothActivityWithCapacitor"
             android:exported="true" />
+        <activity
+            android:name=".BluetoothNativeImplActivity"
+            android:exported="false" />
     </application>
 
 </manifest>
