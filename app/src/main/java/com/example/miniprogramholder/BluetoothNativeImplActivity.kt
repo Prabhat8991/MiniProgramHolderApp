@@ -107,7 +107,7 @@ class BluetoothNativeImplActivity : AppCompatActivity() {
             }
             val webInterface =
                 WebAppInterface(applicationContext, btManager?.adapter, binding.webViewBluetooth)
-            addJavascriptInterface(webInterface, "iOS")
+            addJavascriptInterface(webInterface, "Android")
             webViewClient = this@BluetoothNativeImplActivity.webViewClient
             loadUrl(webUrl)
         }
