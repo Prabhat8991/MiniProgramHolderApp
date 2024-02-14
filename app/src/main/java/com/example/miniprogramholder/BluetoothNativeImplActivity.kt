@@ -23,7 +23,7 @@ import com.example.miniprogramholder.databinding.ActivityBluetoothBinding
 
 class BluetoothNativeImplActivity : AppCompatActivity() {
 
-    private val webUrl = BuildConfig.DEVICE_IP_ADDRESS+"3011/"
+    private val webUrl = BuildConfig.DEVICE_IP_ADDRESS + "3011/"
 
     private lateinit var binding: ActivityBluetoothBinding
 
@@ -73,24 +73,10 @@ class BluetoothNativeImplActivity : AppCompatActivity() {
         btManager?.adapter?.cancelDiscovery()
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when(item.itemId){
-            android.R.id.home -> {
-                this.finish();
-                return true
-            }
-        }
-        return super.onOptionsItemSelected(item)
-    }
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityBluetoothBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.title = "Bluetooth - Native Impl"
-
         setWebView()
         val filter = IntentFilter(BluetoothDevice.ACTION_FOUND)
         registerReceiver(receiver, filter)
@@ -143,11 +129,13 @@ class BluetoothNativeImplActivity : AppCompatActivity() {
             deviceList.clear()
             Log.i("####discovery::", "Clickeddd")
             bluetoothAdapter?.startDiscovery()
-            /* For Testing only on Emulator Uncomment the below line.
-            binding.webViewBluetooth.evaluateJavascript(
-                bluetoothCallback("User 1 - 90:02:09:87:10|User 2 - 89:e0:a1:o5:7i|User 3 - 00:01:a1:oi:01"),
-                null
-            )*/
+            // For Testing only on Emulator Uncomment the below line.
+            runOnUiThread {
+                binding.webViewBluetooth.evaluateJavascript(
+                    bluetoothCallback("User 1 - 90:02:09:87:10|User 2 - 89:e0:a1:o5:7i|User 3 - 00:01:a1:oi:01"),
+                    null
+                )
+            }
         }
     }
 

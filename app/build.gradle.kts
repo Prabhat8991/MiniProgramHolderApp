@@ -25,7 +25,7 @@ android {
 
     buildTypes {
         debug {
-            buildConfigField("String", "DEVICE_IP_ADDRESS", "\"https://192.168.111.119:\"")
+            buildConfigField("String", "DEVICE_IP_ADDRESS", "\"https://10.0.2.2:\"")
         }
         release {
             isMinifyEnabled = false

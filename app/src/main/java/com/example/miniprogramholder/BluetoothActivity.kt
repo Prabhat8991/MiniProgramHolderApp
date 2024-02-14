@@ -3,6 +3,7 @@ package com.example.miniprogramholder
 import android.Manifest
 import android.content.pm.PackageManager
 import android.net.http.SslError
+import android.os.Build
 import android.os.Bundle
 import android.view.View
 import android.webkit.GeolocationPermissions
@@ -28,11 +29,14 @@ class BluetoothActivity : AppCompatActivity() {
         setContentView(R.layout.activity_bluetooth)
 
         // Request user to enable Bluetooth
-        if (ActivityCompat.checkSelfPermission(
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S && (ActivityCompat.checkSelfPermission(
                 this,
                 Manifest.permission.BLUETOOTH_CONNECT
-            ) != PackageManager.PERMISSION_GRANTED
-        ) {
+            ) != PackageManager.PERMISSION_GRANTED || ActivityCompat.checkSelfPermission(
+                this,
+                Manifest.permission.BLUETOOTH_SCAN
+            ) != PackageManager.PERMISSION_GRANTED)
+        )  {
             // TODO: Consider calling
             //    ActivityCompat#requestPermissions
             // here to request the missing permissions, and then overriding
@@ -43,6 +47,7 @@ class BluetoothActivity : AppCompatActivity() {
             requestPermissions(
                 arrayOf(
                     android.Manifest.permission.BLUETOOTH_CONNECT,
+                    android.Manifest.permission.BLUETOOTH_SCAN,
                     android.Manifest.permission.BLUETOOTH,
                     android.Manifest.permission.BLUETOOTH_ADMIN,
                     android.Manifest.permission.ACCESS_FINE_LOCATION,

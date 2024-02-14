@@ -26,9 +26,7 @@ class CameraActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_camera)
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            checkCameraPermission()
-        }
+        checkCameraPermission()
     }
 
     private fun initializeWebView() {
@@ -61,7 +59,6 @@ class CameraActivity : AppCompatActivity() {
 
     }
 
-    @RequiresApi(Build.VERSION_CODES.M)
     private fun checkCameraPermission() {
         if (ContextCompat.checkSelfPermission(
                 this,

@@ -3,6 +3,7 @@ package com.example.miniprogramholder
 import android.Manifest
 import android.content.pm.PackageManager
 import android.net.http.SslError
+import android.os.Build
 import android.os.Bundle
 import android.view.View
 import android.webkit.GeolocationPermissions
@@ -28,7 +29,7 @@ class DeviceMotionActivityWithCapacitor : AppCompatActivity() {
         setContentView(R.layout.activity_bluetooth)
 
         // Request user to enable Bluetooth
-        if (ActivityCompat.checkSelfPermission(
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q && ActivityCompat.checkSelfPermission(
                 this,
                 Manifest.permission.ACTIVITY_RECOGNITION
             ) != PackageManager.PERMISSION_GRANTED
